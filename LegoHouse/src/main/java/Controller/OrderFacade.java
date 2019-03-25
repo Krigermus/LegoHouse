@@ -1,15 +1,10 @@
 package Controller;
 
 import Controller.Exceptions.OrderException;
-import Controller.Exceptions.UserException;
 import Controller.Interfaces.IOrderFacade;
 import Model.Mappers.OrderMapper;
-import Model.Mappers.UserMapper;
 import Model.Models.Order;
-import Model.Models.User;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -45,6 +40,7 @@ public class OrderFacade implements IOrderFacade {
         om.shipOrder(orderId);
     }
 
+    /*
     public static void main(String[] args) {
         try {
             OrderFacade of = new OrderFacade();
@@ -57,7 +53,7 @@ public class OrderFacade implements IOrderFacade {
             }*/
             /*for (Order o : of.getOrders()) {
                 System.out.println(o.getOrderId());
-            }*/
+            }
             of.shipOrder(1);
 
         } catch (SQLException | OrderException | UserException ex) {
@@ -65,6 +61,6 @@ public class OrderFacade implements IOrderFacade {
             System.out.println(ex.getMessage());
         }
 
-    }
+    }*/
 
 }

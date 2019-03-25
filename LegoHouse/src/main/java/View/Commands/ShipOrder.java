@@ -4,10 +4,7 @@ import View.Exceptions.CommandException;
 import Controller.Exceptions.OrderException;
 import Controller.OrderFacade;
 import Controller.UserFacade;
-import Model.Models.Order;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

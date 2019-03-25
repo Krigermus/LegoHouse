@@ -1,11 +1,9 @@
 package Model.Mappers;
 
 import Controller.Exceptions.OrderException;
-import Controller.Exceptions.UserException;
 import Model.DBConnector;
 import Model.Interfaces.IOrderMapper;
 import Model.Models.Order;
-import Model.Models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -110,9 +108,7 @@ public class OrderMapper implements IOrderMapper {
             List<Order> orders = new ArrayList<>();
             connection = DBConnector.getInstance().getConnection();
             String quary = "SELECT * FROM orders;";
-            //snaksnak
             PreparedStatement ps = connection.prepareStatement(quary);
-
             ResultSet rs = ps.executeQuery(quary);
             while (rs.next()) {
                 Order o = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"), rs.getBoolean("connectedPattern"), rs.getBoolean("withDoor"), rs.getBoolean("withWindow"));
@@ -144,6 +140,7 @@ public class OrderMapper implements IOrderMapper {
         }
     }
 
+    /*
     public static void main(String[] args) {
         try {
             OrderMapper om = new OrderMapper();
@@ -156,7 +153,7 @@ public class OrderMapper implements IOrderMapper {
             }*/
             /*for (Order o : om.getOrders()) {
                 System.out.println(o.getOrderId());
-            }*/
+            }
             //om.shipOrder(3);
             System.out.println(om.getOrderById(3).getShippingDate());
 
@@ -165,6 +162,6 @@ public class OrderMapper implements IOrderMapper {
             System.out.println(ex.getMessage());
         }
 
-    }
+    }*/
 
 }

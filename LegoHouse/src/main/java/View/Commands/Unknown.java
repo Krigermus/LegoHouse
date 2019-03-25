@@ -3,9 +3,7 @@ package View.Commands;
 import View.Exceptions.CommandException;
 import Controller.OrderFacade;
 import Controller.UserFacade;
-import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *

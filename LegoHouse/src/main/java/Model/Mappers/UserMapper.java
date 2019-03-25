@@ -49,7 +49,6 @@ public class UserMapper implements IUserMapper {
         }
     }
     
-    //snak om denne del
     @Override
     public User getUser(String email) throws UserException, SQLException {
         try {
@@ -100,7 +99,7 @@ public class UserMapper implements IUserMapper {
     }
 
     
-    
+    /*
     public static void main(String[] args) {
         UserMapper um = new UserMapper();
         try {
@@ -112,6 +111,6 @@ public class UserMapper implements IUserMapper {
         } catch (Exception ex) {
             System.out.println("Could not add or validate user!");
         }
-    }
+    }*/
 
 }

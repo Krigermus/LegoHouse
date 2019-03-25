@@ -3,7 +3,6 @@ package Controller;
 import Controller.Exceptions.UserException;
 import Controller.Interfaces.IUserFacade;
 import Model.Mappers.UserMapper;
-import Model.Models.RoleEnum;
 import Model.Models.User;
 import java.sql.SQLException;
 
@@ -30,6 +29,7 @@ public class UserFacade implements IUserFacade{
         return um.validateUser(email, password);
     }
     
+    /*
     public static void main(String[] args) {
         UserFacade uf = new UserFacade();
         try {
@@ -41,5 +41,5 @@ public class UserFacade implements IUserFacade{
         } catch (Exception ex) {
             System.out.println("Could not add or validate user!");
         }
-    }
+    }*/
 }

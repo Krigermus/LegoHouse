@@ -24,7 +24,6 @@
                 <th scope="col">Side3</th>
                 <th scope="col">Side4</th>
                 <th scope="col">Total</th>
-                <th scope="col">Total x Height</th>
                 <th scope="col">Connected</th>
                 <th scope="col">Door</th>
                 <th scope="col">Window</th>
@@ -38,7 +37,6 @@
                 <th scope="col"><%= bricks.get("4x2C")%></th>
                 <th scope="col"><%= bricks.get("4x2D")%></th>
                 <th scope="col"><%= bricks.get("4x2Total")%></th>
-                <th scope="col"><%= bricks.get("4x2Height")%></th>
                 <th scope="col"><%= order.isConnected()%></th>
                 <th scope="col"><%= order.isDoor()%></th>
                 <th scope="col"><%= order.isWindow()%></th>
@@ -50,7 +48,6 @@
                 <th scope="col"><%= bricks.get("2x2C")%></th>
                 <th scope="col"><%= bricks.get("2x2D")%></th>
                 <th scope="col"><%= bricks.get("2x2Total")%></th>
-                <th scope="col"><%= bricks.get("2x2Height")%></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -62,7 +59,6 @@
                 <th scope="col"><%= bricks.get("1x2C")%></th>
                 <th scope="col"><%= bricks.get("1x2D")%></th>
                 <th scope="col"><%= bricks.get("1x2Total")%></th>
-                <th scope="col"><%= bricks.get("1x2Height")%></th>
                 <th></th>
                 <th></th>
                 <th></th>

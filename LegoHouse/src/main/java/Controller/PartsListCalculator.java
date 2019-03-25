@@ -2,7 +2,6 @@ package Controller;
 
 import Model.Models.Order;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  *
@@ -70,10 +69,22 @@ public class PartsListCalculator {
         int calc4x2 = value / 4;
         int calc2x2 = (value % 4) / 2;
         int calc1x2 = (value % 4) % 2;
-
-        bricks.put("4x2"+side, calc4x2);
-        bricks.put("2x2"+side, calc2x2);
-        bricks.put("1x2"+side, calc1x2);
+        
+        if(bricks.containsKey("4x2"+side)){
+            bricks.put("4x2"+side, bricks.get("4x2"+side) + calc4x2);
+        } else {
+            bricks.put("4x2"+side, calc4x2);
+        }
+        if(bricks.containsKey("2x2"+side)){
+            bricks.put("2x2"+side, bricks.get("2x2"+side) + calc2x2);
+        } else {
+            bricks.put("2x2"+side, calc2x2);
+        }
+        if(bricks.containsKey("1x2"+side)){
+            bricks.put("1x2"+side, bricks.get("1x2"+side) + calc1x2);
+        } else {
+            bricks.put("1x2"+side, calc1x2);
+        }
     }
     
     private void calcTotalAndHeight(int height){
@@ -85,16 +96,13 @@ public class PartsListCalculator {
         bricks.put("2x2Total", total2x2);
         bricks.put("1x2Total", total1x2);
         
-        bricks.put("4x2Height", total4x2*height);
-        bricks.put("2x2Height", total2x2*height);
-        bricks.put("1x2Height", total1x2*height);
-        
     }
     
     public HashMap<String, Integer> getBricks(){
         return bricks;
     }
     
+    /*
     public static void main(String[] args) {
         Order order = new Order(5, 13, 9, 4, null, false, false, true, false);
         PartsListCalculator plc = new PartsListCalculator(order, order.isConnected(), order.isDoor(), order.isWindow());
@@ -108,4 +116,5 @@ public class PartsListCalculator {
         System.out.println(bricks.get("1x2A") + " " + bricks.get("1x2B") + " " + bricks.get("1x2C") + " " + bricks.get("1x2D"));
 
     }
+    */
 }

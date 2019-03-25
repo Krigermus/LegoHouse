@@ -24,7 +24,7 @@
                     <td>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="connectedPattern" name="connected" value="true">
-                            <label class="form-check-label" for="connectedPattern">connected</label>
+                            <label class="form-check-label" for="connectedPattern">Pattern</label>
                         </div>
                     </td>
                     <td>

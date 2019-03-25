@@ -6,8 +6,6 @@ import Controller.UserFacade;
 import View.Commands.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,7 +43,7 @@ public class FrontController extends HttpServlet {
             out.println("  <body>");
             out.println("    <h3>" + e.getMessage() + "</h3><hr/>");
             out.println("    <pre>");
-            e.printStackTrace(out); // Don't do this in production code!
+            //e.printStackTrace(out); // Don't do this in production code!
             out.print("</pre>");
             out.println("  </body>");
             out.println("</html>");
