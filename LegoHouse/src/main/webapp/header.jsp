@@ -39,15 +39,15 @@
                     <%} else if (u.getRole().toString().equals("CUSTOMER")) {%>
                     <a class="navbar-brand" href="FrontController?command=showOrders"></a>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?command=createOrder">Create Order</a>
+                        <a class="nav-link" href="FrontController?command=createOrder"><i class="fas fa-shopping-cart"></i> Create Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?command=showOrders">Show Orders </a>
+                        <a class="nav-link" href="FrontController?command=showOrders"><i class="fas fa-archive"></i> Show Orders</a>
                     </li>
                     <%} else if (u.getRole().toString().equals("EMPLOYEE")) {%>
                     <a class="navbar-brand" href="FrontController?command=showOrders"></a>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?command=showOrders">Show Orders </a>
+                        <a class="nav-link" href="FrontController?command=showOrders"><i class="fas fa-archive"></i> Show Orders</a>
                     </li>
                     <%}%>
                     <li class="nav-item">

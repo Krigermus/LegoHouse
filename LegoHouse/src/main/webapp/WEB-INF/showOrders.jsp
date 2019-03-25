@@ -23,6 +23,9 @@
                 <th scope="col">Length</th>
                 <th scope="col">Width</th>
                 <th scope="col">Height</th>
+                <th scope="col">Connected</th>
+                <th scope="col">Door</th>
+                <th scope="col">Window</th>
                 <th scope="col">Shipped</th>
                 <th scope="col">Parts</th>
             </tr>
@@ -34,6 +37,9 @@
                 <td><%= o.getLength()%></td>
                 <td><%= o.getWidth()%></td>
                 <td><%= o.getHeight()%></td>
+                <td><%= o.isConnected()%></td>
+                <td><%= o.isDoor()%></td>
+                <td><%= o.isWindow()%></td>
                 <% if (u.getRole().toString().equals("EMPLOYEE") && !o.isShipped()) {%>
                 <td>
                     <form id="shipForm" method="POST">

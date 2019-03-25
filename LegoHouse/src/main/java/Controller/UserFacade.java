@@ -1,7 +1,7 @@
 package Controller;
 
 import Controller.Exceptions.UserException;
-import Model.Interfaces.IUserFacade;
+import Controller.Interfaces.IUserFacade;
 import Model.Mappers.UserMapper;
 import Model.Models.RoleEnum;
 import Model.Models.User;

@@ -1,4 +1,4 @@
-package Model.Interfaces;
+package Controller.Interfaces;
 
 import Controller.Exceptions.UserException;
 import Model.Models.User;

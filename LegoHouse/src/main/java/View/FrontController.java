@@ -1,6 +1,6 @@
 package View;
 
-import Controller.Exceptions.CommandException;
+import View.Exceptions.CommandException;
 import Controller.OrderFacade;
 import Controller.UserFacade;
 import View.Commands.*;

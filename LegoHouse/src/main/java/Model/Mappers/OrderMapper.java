@@ -7,16 +7,12 @@ import Model.Interfaces.IOrderMapper;
 import Model.Models.Order;
 import Model.Models.User;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,14 +27,17 @@ public class OrderMapper implements IOrderMapper {
         try {
             connection = DBConnector.getInstance().getConnection();
 
-            String quary = "INSERT INTO orders(userId, width, length, height) VALUES(?,?,?,?);";
+            String quary = "INSERT INTO orders(userId, width, length, height, connectedPattern, withDoor, withWindow) VALUES(?,?,?,?,?,?,?);";
             PreparedStatement ps = connection.prepareStatement(quary, Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, order.getUserId());
             ps.setInt(2, order.getWidth());
             ps.setInt(3, order.getLength());
             ps.setInt(4, order.getHeight());
-
+            ps.setBoolean(5, order.isConnected());
+            ps.setBoolean(6, order.isDoor());
+            ps.setBoolean(7, order.isWindow());
+            
             connection.setAutoCommit(false);
             ps.executeUpdate();
             ResultSet orderId = ps.getGeneratedKeys();
@@ -69,7 +68,7 @@ public class OrderMapper implements IOrderMapper {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                Order order = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"));
+                Order order = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"), rs.getBoolean("connectedPattern"), rs.getBoolean("withDoor"), rs.getBoolean("withWindow"));
                 order.setOrderId(rs.getInt("id"));
                 return order;
             }
@@ -93,7 +92,7 @@ public class OrderMapper implements IOrderMapper {
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Order o = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"));
+                Order o = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"), rs.getBoolean("connectedPattern"), rs.getBoolean("withDoor"), rs.getBoolean("withWindow"));
                 o.setOrderId(rs.getInt("id"));
                 orders.add(o);
             }
@@ -116,7 +115,7 @@ public class OrderMapper implements IOrderMapper {
 
             ResultSet rs = ps.executeQuery(quary);
             while (rs.next()) {
-                Order o = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"));
+                Order o = new Order(rs.getInt("userId"), rs.getInt("length"), rs.getInt("width"), rs.getInt("height"), rs.getDate("shippingDate"), rs.getBoolean("shipped"), rs.getBoolean("connectedPattern"), rs.getBoolean("withDoor"), rs.getBoolean("withWindow"));
                 o.setOrderId(rs.getInt("id"));
                 orders.add(o);
             }
@@ -150,7 +149,7 @@ public class OrderMapper implements IOrderMapper {
             OrderMapper om = new OrderMapper();
             UserMapper um = new UserMapper();
             User user = um.getUser("test");
-            //om.addOrder(new Order(user.getId(), 13, 9, 5, Date.valueOf(LocalDate.MAX), false));
+            om.addOrder(new Order(user.getId(), 13, 9, 5, null, false, true, false ,false));
             //System.out.println(om.getOrderById(3).getUserId());
             /*for(Order o : om.getOrdersByUser(7)){
                 System.out.println(o.getOrderId());
@@ -158,7 +157,7 @@ public class OrderMapper implements IOrderMapper {
             /*for (Order o : om.getOrders()) {
                 System.out.println(o.getOrderId());
             }*/
-            om.shipOrder(3);
+            //om.shipOrder(3);
             System.out.println(om.getOrderById(3).getShippingDate());
 
         } catch (SQLException | OrderException | UserException ex) {

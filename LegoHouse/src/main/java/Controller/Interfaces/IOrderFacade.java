@@ -1,4 +1,4 @@
-package Model.Interfaces;
+package Controller.Interfaces;
 
 import Controller.Exceptions.OrderException;
 import Model.Models.Order;

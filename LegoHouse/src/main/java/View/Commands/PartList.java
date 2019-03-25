@@ -1,6 +1,6 @@
 package View.Commands;
 
-import Controller.Exceptions.CommandException;
+import View.Exceptions.CommandException;
 import Controller.Exceptions.OrderException;
 import Controller.OrderFacade;
 import Controller.PartsListCalculator;
@@ -8,8 +8,6 @@ import Controller.UserFacade;
 import Model.Models.Order;
 import java.sql.SQLException;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -30,7 +28,7 @@ public class PartList implements Command {
         HttpSession session = request.getSession();
         try {
             Order o = of.getOrderById(Integer.parseInt(request.getParameter("orderId")));
-            Map<String, Integer> bricks = new PartsListCalculator(o).getBricks();
+            Map<String, Integer> bricks = new PartsListCalculator(o, o.isConnected(), o.isDoor(), o.isWindow()).getBricks();
             session.setAttribute("order", o);
             session.setAttribute("bricks", bricks);
         } catch (SQLException | OrderException ex) {

@@ -1,4 +1,4 @@
-package Controller.Exceptions;
+package View.Exceptions;
 
 /**
  *

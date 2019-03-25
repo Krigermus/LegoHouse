@@ -1,6 +1,6 @@
 package View.Commands;
 
-import Controller.Exceptions.CommandException;
+import View.Exceptions.CommandException;
 import Controller.OrderFacade;
 import Controller.UserFacade;
 import javax.servlet.http.HttpServletRequest;

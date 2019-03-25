@@ -54,3 +54,13 @@ footer {
     overflow: hidden;
     text-align: center;
 }
+
+.table {
+    margin-bottom: 0;
+}
+
+.checkBoxes td {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
