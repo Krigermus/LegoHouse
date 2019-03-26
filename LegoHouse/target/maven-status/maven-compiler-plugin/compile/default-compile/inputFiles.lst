@@ -5,7 +5,6 @@
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Controller/Exceptions/OrderException.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/Interfaces/IOrderMapper.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Controller/Exceptions/UserException.java
-/Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/DataSourceMySql.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/Models/User.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Controller/Interfaces/IOrderFacade.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Controller/UserFacade.java
@@ -15,7 +14,6 @@
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/View/FrontController.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/Models/RoleEnum.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/View/Commands/CommandList.java
-/Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/DatabaseConnector.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/Model/Models/Order.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/View/Commands/PartList.java
 /Users/Joe/Desktop/Skole/2Sem/Modul3/LegoHouse/LegoHouse/src/main/java/View/Commands/Logout.java

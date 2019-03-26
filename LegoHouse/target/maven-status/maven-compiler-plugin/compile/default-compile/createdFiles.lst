@@ -2,7 +2,6 @@ View/Commands/Login.class
 View/Commands/ShipOrder.class
 View/Commands/ShowOrders.class
 Model/Models/RoleEnum.class
-Model/DatabaseConnector.class
 Controller/Exceptions/OrderException.class
 Controller/Interfaces/IUserFacade.class
 View/Commands/Command.class
@@ -23,7 +22,6 @@ Model/Interfaces/IOrderMapper.class
 Model/Models/Order.class
 Model/Interfaces/IUserMapper.class
 Controller/Interfaces/IOrderFacade.class
-Model/DataSourceMySql.class
 Model/DBConnector.class
 Model/Mappers/UserMapper.class
 Model/Models/User.class
