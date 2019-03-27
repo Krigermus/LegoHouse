@@ -1,9 +1,11 @@
 package Controller;
 
 import Controller.Exceptions.OrderException;
+import Controller.Exceptions.UserException;
 import Controller.Interfaces.IOrderFacade;
 import Model.Mappers.OrderMapper;
 import Model.Models.Order;
+import Model.Models.User;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -12,8 +14,7 @@ import java.util.List;
  * @author Martin Frederiksen
  */
 public class OrderFacade implements IOrderFacade {
-
-    OrderMapper om = new OrderMapper();
+    private final OrderMapper om = new OrderMapper();
 
     @Override
     public void addOrder(Order order) throws OrderException, SQLException {
